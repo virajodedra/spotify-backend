@@ -1,0 +1,212 @@
+{
+  "info": {
+    "_postman_id": "357e3efe-cebc-491c-bb4d-3b92ba113090",
+    "name": "Spotify-Backend-Api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "45709614",
+    "_collection_link": "https://go.postman.co/collection/45709614-357e3efe-cebc-491c-bb4d-3b92ba113090?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register User",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\" : \"neon\",\r\n    \"email\" : \"fastneon@gmail.com\",\r\n    \"password\" : \"fasterNeon04\",\r\n    \"role\":\"artist\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/api/auth/register",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "auth", "register"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login User",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\" : \"neon\",\r\n    \"email\" : \"fastneon@gmail.com\",\r\n    \"password\" : \"fasterNeon04\"\r\n} ",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/api/auth/login",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "auth", "login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Logout User",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\" : \"neon\",\r\n    \"email\" : \"fastneon@gmail.com\",\r\n    \"password\" : \"fasterNeon04\"\r\n} ",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/api/auth/logout",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "auth", "logout"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Music",
+      "item": [
+        {
+          "name": "Upload Music",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "music",
+                  "type": "file",
+                  "uuid": "e6cd8d34-1edf-4a64-bbbc-5c44c579b5b7",
+                  "src": "path.../inspiration.mp3"
+                },
+                {
+                  "key": "title",
+                  "value": "inspiration to neon",
+                  "type": "text",
+                  "uuid": "475303f3-b5a2-4eda-8a23-047514c2f48f"
+                }
+              ]
+            },
+            "url": {
+              "raw": "localhost:3000/api/music/upload",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "music", "upload"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Musics",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\" : \" test_album_2 \",\r\n    \"musics\" : [\"699ee0ff39a17c6ef98c9980\",  \"699effe5909e536ab523af81\"]\r\n}"
+            },
+            "url": {
+              "raw": "localhost:3000/api/music/",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "music", ""]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Create Album",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\" : \" neon_special_album \",\r\n    \"musics\" : [\"699f20540bbfd6ee0ef8a9ec\",  \"699f20320bbfd6ee0ef8a9ea\"]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/api/music/album",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "music", "album"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Albums",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\" : \" test_album_2 \",\r\n    \"musics\" : [\"699ee0ff39a17c6ef98c9980\",  \"699effe5909e536ab523af81\"]\r\n}"
+            },
+            "url": {
+              "raw": "localhost:3000/api/music/album",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "music", "album"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Album By Id",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\" : \" test_album_2 \",\r\n    \"musics\" : [\"699ee0ff39a17c6ef98c9980\",  \"699effe5909e536ab523af81\"]\r\n}"
+            },
+            "url": {
+              "raw": "localhost:3000/api/music/album/699f0056909e536ab523af85",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "music", "album", "699f0056909e536ab523af85"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+import mongoose from "mongoose";
+
+const musicSchema = new mongoose.Schema(
+  {
+    uri: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    title: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    artist: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "user",
+      required: true,
+    },
+  },
+  {
+    timestamps: true,
+  },
+);
+
+const musicModel = mongoose.model("music", musicSchema);
+export default musicModel;
